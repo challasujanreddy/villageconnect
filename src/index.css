@@ -1,0 +1,131 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 145 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 145 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 30% 15%;
+
+    --primary: 145 30% 35%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 145 30% 15%;
+
+    --muted: 145 5% 92%;
+    --muted-foreground: 145 10% 40%;
+
+    --accent: 30 50% 92%;
+    --accent-foreground: 145 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 145 10% 90%;
+    --input: 145 10% 90%;
+    --ring: 145 40% 40%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 145 30% 10%;
+    --foreground: 40 33% 98%;
+
+    --card: 145 30% 12%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 145 30% 12%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 145 30% 50%;
+    --primary-foreground: 145 30% 10%;
+
+    --secondary: 30 15% 25%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 145 15% 20%;
+    --muted-foreground: 145 10% 70%;
+
+    --accent: 30 20% 25%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 145 15% 25%;
+    --input: 145 15% 25%;
+    --ring: 145 30% 50%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+}
+
+@layer components {
+  .village-card {
+    @apply flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow transition-all hover:shadow-md;
+  }
+
+  .village-card-image {
+    @apply aspect-[4/3] w-full object-cover;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-r from-village-500/90 to-earth-500/90;
+  }
+
+  .feature-icon-wrapper {
+    @apply flex h-12 w-12 items-center justify-center rounded-full bg-village-100 text-village-600;
+  }
+}
